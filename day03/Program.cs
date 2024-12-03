@@ -10,14 +10,7 @@ Console.WriteLine(matches);
 
 //part 2
 
-var matches2 = Regex.Matches(chars, @"mul\((\d+),(\d+)\)").Aggregate(0, (sum, match) => {
-    var position = match.Index;
-    var cutOff = chars.Take(position);
-    var doIndex = string.Concat(cutOff).LastIndexOf("do()");
-    var dontIndex = string.Concat(cutOff).LastIndexOf("don't()");
-    if (doIndex > dontIndex  || dontIndex == -1)
-        return sum + int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value);
-    else return sum;
-});
+var matches2 = Regex.Matches(chars, @"mul\((\d+),(\d+)\)").Aggregate(0, (sum, match) => sum + ((string.Concat(chars.Take(match.Index)).LastIndexOf("do()") > string.Concat(chars.Take(match.Index)).LastIndexOf("don't()") || string.Concat(chars.Take(match.Index)).LastIndexOf("don't()") == -1) ? int.Parse(match.Groups[1].Value) * int.Parse(match.Groups[2].Value) : 0));
+
 
 Console.WriteLine(matches2);
