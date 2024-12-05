@@ -70,7 +70,6 @@ for (int i = 0; i < rows4 + cols4 -1; i++){
 int result = 0;
 
 foreach (var line in lines1){
-    var count1 = line.Split("XMAS").Length - 1 + line.Split("SAMX").Length - 1;
     result += line.Split("XMAS").Length - 1;
     result += line.Split("SAMX").Length - 1;
 }
@@ -78,7 +77,6 @@ foreach (var line in lines1){
 foreach (var line in lines2){
     var temp = "";
     foreach(var c in line) temp += c;
-    var count2 = temp.Split("XMAS").Length - 1 + temp.Split("SAMX").Length - 1;
     result += temp.Split("XMAS").Length - 1;
     result += temp.Split("SAMX").Length - 1;
 }
@@ -86,7 +84,6 @@ foreach (var line in lines2){
 foreach (var line in lines3){
     var temp = "";
     foreach(var c in line) temp += c;
-    var count3 = temp.Split("XMAS").Length - 1 + temp.Split("SAMX").Length - 1;
     result += temp.Split("XMAS").Length - 1;
     result += temp.Split("SAMX").Length - 1;
 }
@@ -94,7 +91,6 @@ foreach (var line in lines3){
 foreach (var line in lines4){
     var temp = "";
     foreach(var c in line) temp += c;
-    var count4 = temp.Split("XMAS").Length - 1 + temp.Split("SAMX").Length - 1;
     result += temp.Split("XMAS").Length - 1;
     result += temp.Split("SAMX").Length - 1;
 }
